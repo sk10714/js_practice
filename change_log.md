@@ -13,3 +13,7 @@ javescript寫在開頭和結尾的中間
 選取器document.getElementById("btn-nav-toggle")
 新增函式openNav()
 主導覽增加active的類別
+
+＃20220628
+新增02_variable.html
+<script></script>
