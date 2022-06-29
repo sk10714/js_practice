@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點小圖換大圖</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 80%;
+            max-width: 1140px;
+        }
+        .img-fluid{
+            width: 100%;
+        }
+        .main-img{
+            margin-bottom:10px ;
+        }
+        .thumbnails{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .thumbnails>img{
+            width: 80px;
+            margin: 0 auto;
+            /* margin-bottom: 10px; */
+            border: 2px solid white;
+            cursor: pointer
+        }
+        .thumbnails>img.active{
+            border: 2px solid orange;
+            /* box-sizing: border-box; */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-img">
+            <img class="img-fluid" src="public/images/cake_01.jpeg" alt="">
+        </div>   
+        <div class="thumbnails">
+            <img class="active" src="public/images/cake_01.jpeg" alt="">
+            <img src="public/images/cake_03.jpeg" alt="">
+            <img src="public/images/cake_04.jpeg" alt="">
+            <img src="public/images/cake_05.jpeg" alt="">
+        </div>
+    </div>
+
+
+    <!-- jquery主程式 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- 自定義 -->
+    <script>
+        $('.thumbnails>img').on('click', function(e){
+            //主圖src屬性(attribute)替換成當前點擊縮圖的src
+            $('.main-img>img').attr('src', $(this).attr('src'))
+            $('.thumbnails>img')
+        })//.thumbnails>img end
+
+
+
+
+    </script>
+</body>
+</html>
