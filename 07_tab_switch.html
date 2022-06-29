@@ -26,8 +26,11 @@
         .tab-content{
             display: none;
         }
-        .tab_content.active{
+        .tab-content.active{
             display: block;
+        }
+        .img-fluid{
+            width: 50%;
         }
     </style>
 </head>
@@ -37,20 +40,49 @@
         <a href="#tab2">出價紀錄</a>
         <a href="#tab3">問與答</a>
     </div>
-    <div id="tab1" class="tab-content active">內容1</div>
-    <div id="tab2" class="tab-content">內容2</div>
-    <div id="tab3" class="tab-content">內容3</div>
+    <div id="tab1" class="tab-content active">
+        <img src="public/images/cake_01.jpeg" class="img-fluid" alt="">
+        <p>
+            <ul>
+                <li>蛋糕尺寸：5寸</li>
+                <li>口味：草莓口味</li>
+                <li>價格：NTD 800</li>
+            </ul>
+        </p>
+    </div>
+    <div id="tab2" class="tab-content">    
+        <p>
+            <ul>
+                <li>user01</li>
+                <li>user02</li>
+                <li>user03</li>
+                <li>user04</li>
+                <li>user05</li>
+                <li>user06</li>
+                <li>user07</li>
+                <li>user08</li>
+                <li>user09</li>
+                <li>user10</li>
+            </ul>
+        </p>
+    </div>
+    <div id="tab3" class="tab-content">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore assumenda impedit sit mollitia iste, itaque fuga, nemo quos blanditiis quod doloremque, ea reiciendis aliquam ratione provident quam minus? Quidem!
+        </p>
+    </div>
 
     <!-- jquery主程式 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>    
-        $('.tab-link>a').on('click', function(){
+        $('.tab-link>a').on('click', function(e){
+            e.preventDefault()
             $(this).addClass('active')
             $(this).siblings().removeClass('active')
             $( $(this).attr('href')).addClass('active')
             $( $(this).attr('href')).siblings().removeClass('active')
 
-        })
+        })//.tab-link>a end
     </script>
 </body>
 </html>
