@@ -5,41 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
+        *{
+            box-sizing: border-box;
+        }
+        .question-content{
+            border: 1px solid gray;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            line-height: 20px;
+            padding:10px 8px;
+            cursor: pointer;
+        }
+        .question-content.active  .answer{
+            display: block;
+        }
+        .question-content.active .icon-arrow{
+            transform: rotate(180deg);
+        }
+        .answer{
+            display: none;
+        }
+        .question{
+            position: relative;
+        }
+        .icon-arrow{
+            transition: transform .3s;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            /* background-color: pink;  */
+            right: -5px;
+            top: -5px;
+            /* transform: rotate(180deg); */
+        }
 
     </style>
 </head>
 <body>
     <div class="container">
         <div class="question-content">
-            <div class="question">Q01
-                <div class="icon-arrow"></div>
+            <div class="question">Q-01
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
             </div>
-            <div class="answer">A01</div>
+            <div class="answer">A-01</div>
         </div>
         <div class="question-content">
-            <div class="question">Q02
-                <div class="icon-arrow"></div>
+            <div class="question">Q-02
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
             </div>
-            <div class="answer">A02</div>
+            <div class="answer">A-02</div>
         </div>
         <div class="question-content">
-            <div class="question">Q03
-                <div class="icon-arrow"></div>
+            <div class="question">Q-03
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
             </div>
-            <div class="answer">A03</div>
+            <div class="answer">A-03</div>
         </div>
         <div class="question-content">
-            <div class="question">Q04
-                <div class="icon-arrow"></div>
+            <div class="question">Q-04
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
             </div>
-            <div class="answer">A04</div>
+            <div class="answer">A-04</div>
         </div>
         <div class="question-content">
-            <div class="question">Q05
-                <div class="icon-arrow"></div>
+            <div class="question">Q-05
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
             </div>
-            <div class="answer">A05</div>
+            <div class="answer">A-05</div>
         </div>
     </div>
 
@@ -49,7 +85,10 @@
     <!-- jquery主程式 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-
+        $('.question-content').on('click', function(){
+            $(this).toggleClass('active')
+            $(this).siblings().removeClass('active')
+        })//.question-content end
     </script>
 </body>
 </html>
