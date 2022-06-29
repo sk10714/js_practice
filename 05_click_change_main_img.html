@@ -23,8 +23,9 @@
         }
         .thumbnails>img{
             width: 80px;
-            margin: 0 auto;
-            /* margin-bottom: 10px; */
+            /* margin: 0 auto; */
+            margin-right: 10px;
+            margin-bottom: 10px;
             border: 2px solid white;
             cursor: pointer
         }
@@ -40,11 +41,12 @@
         <div class="main-img">
             <img class="img-fluid" src="public/images/cake_01.jpeg" alt="">
         </div>   
+        <p id="product-description">產品說明</p>
         <div class="thumbnails">
-            <img class="active" src="public/images/cake_01.jpeg" alt="">
-            <img src="public/images/cake_03.jpeg" alt="">
-            <img src="public/images/cake_04.jpeg" alt="">
-            <img src="public/images/cake_05.jpeg" alt="">
+            <img class="active" src="public/images/cake_01.jpeg" alt="草莓蛋糕">
+            <img src="public/images/cake_03.jpeg" alt="抹茶蛋糕">
+            <img src="public/images/cake_04.jpeg" alt="奶油蛋糕">
+            <img src="public/images/cake_05.jpeg" alt="愛心蛋糕">
         </div>
     </div>
 
@@ -56,7 +58,11 @@
         $('.thumbnails>img').on('click', function(e){
             //主圖src屬性(attribute)替換成當前點擊縮圖的src
             $('.main-img>img').attr('src', $(this).attr('src'))
-            $('.thumbnails>img')
+            $('#product-description').text($(this).attr('alt'))
+            //當前點擊縮圖套用active
+            $(this).addClass('active')
+            //當前點擊縮圖以外的縮圖移除active
+            $(this).siblings().removeClass('active ')
         })//.thumbnails>img end
 
 
