@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 100px);
+            grid-template-areas: 
+            "r r r y y"
+            "r r r y y"
+            "c c o g g"
+            "c c b b b"
+            ;
+            gap: 10px;
+        }
+        .box1{
+            background-color: rgb(255, 187, 187);
+            grid-area: r;
+        }
+        .box2{
+            background-color: rgb(255, 223, 187);
+            grid-area: o;
+        }
+        .box3{
+            background-color: rgb(255, 249, 187);
+            grid-area: y;
+        }
+        .box4{
+            background-color: rgb(206, 255, 187);
+            grid-area: g;
+            
+        }
+        .box5{
+            background-color: rgb(187, 247, 255);
+            grid-area: c;
+        }
+        .box6{
+            background-color: rgb(187, 189, 255);
+            grid-area: b;
+        }
+        .box7{
+            background-color: rgb(221, 187, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+        
+    </div>
+</body>
+</html>
